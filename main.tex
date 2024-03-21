@@ -1,0 +1,97 @@
+\documentclass[12pt, a4paper, oneside]{ctexart}
+
+\usepackage{soul}
+
+\title{寝室音量计(草案)}
+\author{第八组}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{引言}
+由于寝室里面居住的人比较多，难免有些人会在别人休息的时候发出噪音，
+比如在晚上打游戏打high了，就容易忘记控制音量，越叫越大声，影响别人的休息。
+所以我们需要一个寝室音量计来监测寝室的音量，
+当音量超过一定的值的时候，这个设备就会提醒那个小寝的人注意一下，
+不要影响到别人的休息。
+\subsection*{此设备的益处}
+\begin{itemize}
+    \item 直接联系：利于保持寝室的安静，有利于大家的休息。
+    \item 人际关系：这样可以避免面子过不去，不好意思提醒别人。
+    \item 长远来看：有助于维护寝室的和谐，避免为日后的矛盾埋下伏笔。
+\end{itemize}
+
+\section{设计思路}
+因为小寝内部相对来说比较好调节，所以我们只考虑小寝与小寝之间的关系。
+
+总体思路是以小寝为单位。如果在休息时间声音过大，
+根据麦克风判定是哪个寝室发出的。
+
+
+
+\textbf{ 注意：以下内容仍待讨论}
+
+\subsection{安装位置}
+
+\begin{itemize}
+    \item 挂在小寝的门外面(这样就需要三个设备)
+    \item 只是用一个设备，使用多麦克风阵列，可以判定声音的方向
+\end{itemize}
+
+\subsection{提醒方式}
+\begin{itemize}
+    \item 通过QQ机器人在寝室群@那个寝室的成员里提醒他们说话声音小一些。
+    \item 直接向那个寝室发出提示声音
+\end{itemize}
+
+\subsection{联网方式}
+\begin{itemize}
+    \item WiFi连接（SCUNET/eduroam/other）
+    \item 蓝牙连接（需要转接设备）
+    \item 使用eSIM
+\end{itemize}
+
+\subsection{目前设计上的缺陷(疑问)}
+\begin{itemize}
+    \item 续航能力弱可能导致使用麻烦
+\end{itemize}
+
+
+\section{技术栈}
+\subsection{总览}
+\begin{itemize}
+    \item 物联网端：esp32+麦克风
+    \item 服务端：
+    \begin{itemize}
+        \item 服务器程序编写
+        \item 通知：QQ机器人程序编写
+    \end{itemize}
+
+\end{itemize}
+
+\subsection{分工合作}
+
+\textbf{单片机端：}
+\begin{itemize}
+    
+    \item 单片机程序开发
+    \item 判定声音过大算法设计
+    \item 单片机外观(封装)设计
+\end{itemize}
+
+\textbf{服务器端：}
+
+\begin{itemize}
+    \item 服务器端程序开发
+    \item 服务器端QQ机器人开发
+    
+\end{itemize}
+
+\subsection{代码共享平台} 
+Github 
+
+
+
+\end{document}
