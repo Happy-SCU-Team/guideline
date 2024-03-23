@@ -5,3 +5,9 @@ main.log
 main.fls
 main.fdb_latexmk
 main.aux
+guideline.aux
+guideline.fdb_latexmk
+guideline.fls
+guideline.log
+guideline.pdf
+guideline.synctex.gz
