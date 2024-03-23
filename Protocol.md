@@ -9,6 +9,7 @@
 
 
 数据流向如下
+
 $$
 QQ机器人 \leftarrow 服务端主程序 \rightleftarrows 单片机端程序
 $$
