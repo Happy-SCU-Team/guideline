@@ -30,7 +30,12 @@ HTTP地址`http://localhost/alert`
 ```
 调用示例 `c#`
 ```cs
-string jsonPayload = @"{""dorm_number"": 1}";
+string jsonPayload = @"
+{
+    ""account"":114514,
+    ""dorm_number"": 1
+}
+";
 using (HttpClient client = new HttpClient())
 {
     HttpResponseMessage response = 
@@ -108,7 +113,7 @@ socket传输的均为使用UTF-8编码的文本信息
 - info : 代表只是单纯地向服务器发送这一时刻的音量信息
 
 #### 登录
-为区分不同的大寝，每个大寝都设置一个独一无二的账号名
+为区分不同的大寝，每个大寝都设置一个独一无二的账号名。且这应当是建立TCP连接后做的第一件事。
 ```json
 {
     "type":"login",
