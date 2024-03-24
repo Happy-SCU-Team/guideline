@@ -47,16 +47,16 @@ using (HttpClient client = new HttpClient())
 注：使用POST时，参数均为JSON格式，并且继承于如下JSON
 ```json
 {
-    "account":"your accounnt name",
+    "account":"your account name",
 }
 ```
 
 
-|地址|请求方式|参数|说明|返回值|
+|地址|方式|参数|说明|返回值|
 |:---|:---|:---|:---|:---|
-|/update/account|POST|new_account:你想要更新的用户名|更新用户名|{"is_success":bool,"failed_message":string}|
-|/update/schedule|POST|{"day":int,"start_time":string,"end_time":string}|更新计划信息，字符串格式参考 [更新计划信息](#更新计划信息)|{"is_success":bool,"failed_message":string}|
-|/check/account?q=|GET|q:你需要查询的用户名|查询用户名是否存在|{”is_exist:bool}|
+|/update/account|POST|new_account:你想要更新的用户名|更新用户名|{ "is_success":bool, "failed_message":string }|
+|/update/schedule|POST|{"day":int, "start_time":string, "end_time":string}|更新计划信息，字符串格式参考 [更新计划信息](#更新计划信息)|{"is_success":bool, "failed_message":string}|
+|/check/account/[q]|GET|q:你需要查询的用户名|查询用户名是否存在|{”is_exist:bool}|
 
 
 ## 服务端主程序_与_单片机端
@@ -82,6 +82,7 @@ socket传输的均为使用UTF-8编码的文本信息
 }
 ```
 `type`共有以下类型
+
 |type|含义|
 |:---:|:---|
 |volume|发送的是音量信息|
@@ -133,6 +134,7 @@ socket传输的均为使用UTF-8编码的文本信息
 }
 ```
 `type`共有以下类型
+
 |type|含义|
 |:---:|:---|
 |update|更新信息|
@@ -159,7 +161,7 @@ socket传输的均为使用UTF-8编码的文本信息
             "end_time":"31:30"//24:00+7:30=31:30表示这是在后一天
         },
         {//周二
-            "start_time":"",
+            "start_time":"...",
             "end_time":""
         },
         {//周三
