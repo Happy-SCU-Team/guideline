@@ -64,6 +64,9 @@ using (HttpClient client = new HttpClient())
 考虑到单片机羸弱的性能以及电量消耗，网络连接使用socket
 
 ### socket连接说明
+
+socket连接类型为TCP
+
 服务器端运行socketServer来接受socket连接，socket连接由单片机端发起
 
 socket传输的均为使用UTF-8编码的文本信息
