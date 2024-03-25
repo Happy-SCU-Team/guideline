@@ -211,6 +211,17 @@ socket传输的均为使用UTF-8编码的文本信息
     "account":"your new account name"
 }
 ```
+##### 更新间隔时间
+
+在单片机检测到大吵大闹之后会上报至服务网进行QQ提醒，若仍不安静，将间隔`interval`时间之后进行设备端声音提示
+
+```json
+{
+    "type":"update",
+    "content":"interval",
+    "interval":30
+}
+```
 
 #### 屏蔽警告工作
 
