@@ -71,7 +71,7 @@ using (HttpClient client = new HttpClient())
 |地址|方式|参数|说明|返回值|
 |:---|:---|:---|:---|:---|
 |/update/account|POST|new_account:你想要更新的用户名|更新用户名|{ "is_success":bool, "failed_message":string }|
-|/update/schedule|POST|{"day":int, "start_time":string, "end_time":string}|更新计划信息，字符串格式参考 [更新计划信息](#更新计划信息)|{"is_success":bool, "failed_message":string}|
+|/update/schedule|POST|[{"start_time":string, "end_time":string}, ...]|更新计划信息，字符串格式参考 [更新计划信息](#更新计划信息)|{"is_success":bool, "failed_message":string}|
 |/check/account/[q]|GET|q:你需要查询的用户名|查询用户名是否存在|{”is_exist:bool}|
 
 
