@@ -132,7 +132,8 @@ socket传输的均为使用UTF-8编码的文本信息
 ```json
 {
     "type":"login",
-    "account":"114514"
+    "account":"114514",
+    "dorm":2//小寝号
 }
 ```
 
