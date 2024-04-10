@@ -181,20 +181,20 @@ socket传输的均为使用UTF-8编码的文本信息
     "content":"schedule",
     "schedule":[//以每周一0点作为起始点，之后以分钟为单位累加
         {//segment 1
-            "start_time":"1380",//23*60=1380
-            "end_time":"1890"//24*60+7*60 +30=1890表示这是在周二
+            "start_time":1380,//23*60=1380
+            "end_time":1890//24*60+7*60 +30=1890表示这是在周二
         },
         {//segment 2
-            "start_time":"2820",//24*60+23*60=2820
-            "end_time":"3360"//24*60+24*60+8*60=3360//周三
+            "start_time":2820,//24*60+23*60=2820
+            "end_time":3360//24*60+24*60+8*60=3360//周三
         },
         {//segment 3
-            "start_time":"",
-            "end_time":""
+            "start_time":...,
+            "end_time":...,
         },
         {//...
-            "start_time":"",
-            "end_time":""
+            "start_time":...,
+            "end_time":...
         },
     ],
 
