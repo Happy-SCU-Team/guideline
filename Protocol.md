@@ -73,8 +73,9 @@ using (HttpClient client = new HttpClient())
 |/|Get|-|测试服务器是否可用|"Server is running!!!"|
 |/update/account|POST|new_account:你想要更新的用户名|更新用户名|{ "is_success":bool, "failed_message":string }|
 |/update/schedule|POST|{"segments":[{"start_time":int, "end_time":int}, ...]}|更新计划信息，字符串格式参考 [更新计划信息](#更新计划信息)|{"is_success":bool, "failed_message":string}|
+|/update/interval|POST|{"interval":int}|更新interval(秒)|{"is_success":bool, "failed_message":string}|
 |/check/account/[q]|GET|q:你需要查询的用户名|查询用户名是否存在|{"is_exist":bool}|
-|/[account]/schedule|Get|account:用户名|查询计划信息字符串格式参考 [更新计划信息](#更新计划信息)|[ {"start_time":int, "end_time":int} ...]
+|/[account]/schedule|Get|account:用户名|查询计划信息字符串格式参考 [更新计划信息](#更新计划信息)|[ {"start_time":int, "end_time":int} ...]|
 
 
 ## 服务端主程序_与_单片机端
@@ -173,6 +174,7 @@ socket传输的均为使用UTF-8编码的文本信息
 `content`有以下类型
 - schedule : 表示更新计划信息
 - account : 表示更新用户名
+- interval : 表示更新interval
 
 ##### 更新计划信息
 ```json
