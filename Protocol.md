@@ -238,7 +238,7 @@ socket传输的均为使用UTF-8编码的文本信息
 ```json
 {
     "type":"mute",
-    "time":"hh:mm",
+    "time":int,//以秒为单位
 }
 ```
 
