@@ -76,6 +76,7 @@ using (HttpClient client = new HttpClient())
 |/update/interval|POST|{"interval":int}|更新interval(秒)|{"is_success":bool, "failed_message":string}|
 |/check/account/[q]|GET|q:你需要查询的用户名|查询用户名是否存在|{"is_exist":bool}|
 |/[account]/schedule|Get|account:用户名|查询计划信息字符串格式参考 [更新计划信息](#更新计划信息)|[ {"start_time":int, "end_time":int} ...]|
+|/all_account|Get||获取所有account|["name1","name2"]|
 
 
 ## 服务端主程序_与_单片机端
@@ -90,7 +91,7 @@ socket连接类型为TCP
 
 socket传输的均为使用UTF-8编码的文本信息
 
-其中，为避免粘包，每次发送完信息必须在末尾加上一个EOF标识符`\u0004`(或HTML表示法`&#04;`)，因为这是一个不可见字符，通常不会使用，当然也要避免使用该字符
+其中，为避免粘包，每次发送完信息必须在末尾加上一个EOF标识符`\n`，注意避免使用该字符
 
 文本信息格式均采用JSON
 
@@ -148,6 +149,7 @@ socket传输的均为使用UTF-8编码的文本信息
 ```
 `content`有以下值
 - schedule : 请求获取[计划信息](#更新计划信息) 
+- interval : 请求获取[间隔时间](#更新间隔时间)
 
 ### 服务端主程序 $\rightarrow$ 单片机端
 
