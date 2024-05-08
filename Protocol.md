@@ -77,6 +77,7 @@ using (HttpClient client = new HttpClient())
 |/check/account/[q]|GET|q:你需要查询的用户名|查询用户名是否存在|{"is_exist":bool}|
 |/[account]/schedule|Get|account:用户名|查询计划信息字符串格式参考 [更新计划信息](#更新计划信息)|[ {"start_time":int, "end_time":int} ...]|
 |/all_account|Get||获取所有account|["name1","name2"]|
+|/[account]/history|Get|account:用户名|查询声音历史|[{"volume":float,"volume_type":string,"dorm_id":int,time:int}]|
 
 
 ## 服务端主程序_与_单片机端
